@@ -34,6 +34,23 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainMenuScreen() {
+    var currentScreen by remember { mutableStateOf("menu") }
+
+    when (currentScreen) {
+        "menu" -> MainMenu(
+            onCreateTimer = { currentScreen = "create" },
+            onMyTimers = { currentScreen = "timers" }
+        )
+        "create" -> CreateTimerScreen()
+        //"timers" -> MyTimersScreen()
+    }
+}
+
+@Composable
+fun MainMenu(
+    onCreateTimer: () -> Unit,
+    onMyTimers: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -64,6 +81,7 @@ fun MainMenuScreen() {
                     .fillMaxWidth()
                     .clickable {
                         // TODO: navigate to create timer screen
+                        onCreateTimer()
                     },
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
             ) {
@@ -94,6 +112,7 @@ fun MainMenuScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable {
+                        onMyTimers()
                         // TODO: navigate to saved timers screen
                     },
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
