@@ -42,7 +42,7 @@ fun MainMenuScreen() {
             onMyTimers = { currentScreen = "timers" }
         )
         "create" -> CreateTimerScreen()
-        //"timers" -> MyTimersScreen()
+        "timers" -> MyTimersScreen()
     }
 }
 
@@ -80,7 +80,6 @@ fun MainMenu(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable {
-                        // TODO: navigate to create timer screen
                         onCreateTimer()
                     },
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
@@ -113,7 +112,6 @@ fun MainMenu(
                     .fillMaxWidth()
                     .clickable {
                         onMyTimers()
-                        // TODO: navigate to saved timers screen
                     },
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
             ) {
