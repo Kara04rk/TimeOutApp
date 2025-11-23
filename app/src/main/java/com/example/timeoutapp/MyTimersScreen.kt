@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun MyTimersScreen() {
+fun MyTimersScreen(onBack: () -> Unit) {
     //placeholder
     val savedTimers = listOf(
         "15 minutes",

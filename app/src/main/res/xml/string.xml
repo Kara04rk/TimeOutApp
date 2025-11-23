@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TimeOut</string>
+    <string name="accessibility_service_description">TimeOut blocks access to apps during focus sessions, allowing only phone calls and text messages. This helps you stay focused and avoid distractions.</string>
+    <string name="accessibility_service_label">TimeOut App Blocker</string>
+</resources>
